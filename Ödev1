@@ -1,0 +1,58 @@
+### SORU 1 ###  ( VERİ TİPLERİ )
+
+x = "Ben Can"  => (str, string) *Karakterlerden oluşur. Metinsel yapıdır. 
+
+x = 5.3 => (float)   *Ondalık sayıları ifade etmek için kullanılır. 
+
+x = 1   => (int, integer) *Tam sayıları ifade eder. Matematiksel işlem yapılabilir.
+
+x = 4j  => (complex) *Karmaşık sayılar için kullanılır. Tam sayıları da karmaşık sayı olarak dönüştürebilir. 
+
+x = True => (bool, boolean) *True ve False değerlerini alır. Doğru-yanlışı konrol etmek için kullanılır. 
+
+x = 123456748 => (Long) *Uzun tam sayılar için kullanılır. 
+
+x = ["Ali", 1, 3.5 ] => (List) *İçerisinde birden fazla ve birbirinden farklı verilerin bulunabildiği veri türüdür. 
+
+x = (1,2,3,4) => (tuple) *List'den farkı içersindeki değerler değiştirilemez.
+
+x = {"Car" : "Araba"} => (dict) *Türkçedeki sözlük anlamına gelir. Birbirleriyle "Key-Value" ilişkisi olan değerleri içinde barındırır. 
+
+
+### SORU 2 ### (Kodlama.io İncelemesi)
+
+* "Ödev 1" Str yapısında bir değişkendir. Metinsel ifadedir. 
+
+* "Tamamlama yüzdesi %50" > Bu da int yapısında bir değişkendir. 
+
+* "Kurslar ve eğitmenler" > Liste türünde yapılmış olabilir.
+  
+  
+  ### SORU 3 ### (Şart Blokları)
+  
+  
+bitirVeDevamEt = True 
+
+if bitirVeDevamEt == True:
+    print("Bir sonraki derse geçebilirsiniz.") 
+
+else:
+    print("Lütfen dersi kontrol ediniz")
+
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
