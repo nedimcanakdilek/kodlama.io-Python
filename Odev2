@@ -1,0 +1,136 @@
+print("<<<<<<<<<< Öğrenci Kayıt Sistemine Hoşgeldiniz >>>>>>>>>>")
+loop = True
+ogrenciler = ["Nedim Can AKDİLEK", "Şeyma DAL", "Barbaros PAŞA", "Özge ZENGİN"]
+
+def anaMenu():
+    secenek = input("Yapmak istediğiniz işlemi seçiniz: \n"
+             " 1 - Öğrenci Ekleme\n"
+             " 2 - Öğrenciyi Listeden Silme\n"
+             " 3 - Öğrencileri Görüntüle\n "
+             " 4 - Öğrencinin Numarasını Görüntüle\n"
+             " 5 - Sistemi Sonlandır! ")
+    if secenek == "1":
+        print("Kayıtlama menüsüne yönlendiriliyorsunuz!")
+        print("***************************************************")
+        ogrenciEkle()
+    if secenek == "2":
+        print("Öğrenci silme menüsüne yönlendiriliyorsunuz!")
+        print("***************************************************")
+        ogrenciSil()
+    if secenek == "3":
+        print("Öğrenciler listeleniyor..")
+        print("***************************************************")
+        ogrenciListele()
+    if secenek == "4":
+        print("Öğrenci Numaraları sayfasına yönlendiriliyorsunuz!")
+        print("***************************************************")
+        ogrenciNumarasi()
+    if secenek == "5":
+        print("Sistem Kapatılıyor!")
+        print("***************************************************")
+        cikis()
+
+def ogrenciEkle():   
+    print(ogrenciler)
+    ekle = input("Eklemek istediğiniz öğrencinin ismini ve soy ismini giriniz: \n ")
+    ogrenciler.append(ekle)
+    print(ogrenciler)
+    def kontrol():
+        print("***************************************************")
+        secenek = input("Daha fazla ekleme için --> 1\n"
+                        "Diğer seçenekler için --> 2\n")
+        if secenek == "1":
+            ogrenciEkle()
+        if secenek == "2":
+            menuyeDon()
+        if secenek not in ["1", "2"]:
+            print("***************************************************")
+            print("Geçerli bir seçenek giriniz")
+    kontrol()
+def ogrenciSil():
+    print(ogrenciler)
+    sil = input("Silmek istediğiniz öğrencinin isim ve soy ismini giriniz: \n ")
+    if sil in ogrenciler:
+        ogrenciler.remove(sil)
+    else:
+        print("***************************************************")
+        print("Hatalı giriş yaptınız, veri bulunamadı. Lütfen tekrar giriş yapınız")
+        print("***************************************************")
+        (ogrenciSil)
+    print(ogrenciler)
+    def kontrol():
+        print("***************************************************")
+        secenek = input("Daha fazla silme işlemi için 1\n" 
+                        "Diğer seçenekler için 2\n")
+        if secenek == "1":
+            ogrenciSil()
+        if secenek == "2":
+            menuyeDon()
+        if secenek not in ["1", "2"]:
+            print("***************************************************")
+            print("Lütfen geçerli seçenek giriniz!")
+        kontrol()
+    kontrol()
+
+def ogrenciListele():
+        print("***************************************************")
+        for ogrenci in ogrenciler :
+            print(ogrenciler)
+            break
+        def kontrol():
+         print("***************************************************")
+        secenek = input("Bir kere daha görüntülemek için 1\n" 
+                        "Diğer seçenekler için 2\n")
+        if secenek == "1":
+            ogrenciListele()
+        if secenek == "2":
+            menuyeDon()
+        if secenek not in ["1", "2"]:
+            print("***************************************************")
+            print("Lütfen geçerli seçenek giriniz!")
+        kontrol()
+        
+
+def ogrenciNumarasi():
+    print(ogrenciler)
+    num = input("Numarasını öğrenmek istediğiniz öğrencinin ismini soy ismini yazınız: \n")
+    ogrnum = ogrenciler.index(num)
+    print(f"Öğrenci numarası : {ogrnum}")
+
+    def kontrol():
+        print("***************************************************")
+        secenek = input("Daha fazla numara sorgulamak için >> 1\n"
+                        "Devam etmek için >> 2\n")
+        if secenek == "1":
+            ogrenciNumarasi()
+        if secenek == "2":
+            menuyeDon()
+        else:
+            print("***************************************************")
+            print("Lütfen geçerli bir seçenek giriniz!")
+        kontrol()
+    kontrol()
+def menuyeDon():
+        print("***************************************************")
+        secenek = input("Lütfen yapmak istediğiniz işlemi belirtiniz : \n"
+                        "1 - Ana menüye dön \n"
+                        "2 - Sistemi Kapat")
+        if secenek == "1":
+            print("***************************************************")
+            print("Ana menüye dönülüyor..")
+            anaMenu()
+        if secenek == "2":
+            print("***************************************************")
+            print("Sistem kapanıyor")
+            cikis()
+        if secenek not in ["1","2"] :
+            print("***************************************************")
+            print("Lütfen geçerli bir seçenek giriniz!")
+            menuyeDon()
+def cikis():
+        print("***************************************************")
+        print("Sistem kapatılıyor!")
+        loop = False 
+        cikis()
+while loop:
+    anaMenu()
