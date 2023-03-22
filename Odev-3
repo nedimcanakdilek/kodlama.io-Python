@@ -1,0 +1,41 @@
+HTML
+  HTML kod, kısaca “standart bir metin işaretleme dili” şeklinde tanımlanabilir. 
+  HTML kod yazma işlemi ile bir tarayıcı uygulaması yapılamaz ama o tarayıcının ekranında gösterilecek tüm içerikler hazırlanabilir. Bu nedenle bir programlama dili değil, işaretleme dilidir.
+  HTML kodlarının en çok kullanıldığı yer, site kurma sürecidir. Bir site üzerindeki hemen her detay, bu kodların yardımı ile şekillenir. Site içeriklerinin temel dinamikleri arasında bulunan başlıkları, paragrafları, metinleri, görselleri ve yapı profillerini oluşturmak ve konumlandırmak için kullanılır.
+  
+HTML Locators
+Web sayfasındaki öğeyi doğru bir şekilde bulmak için birçok konum belirleyici türü vardır:
+ID	=> Öğenin ID’sine göre bulmak için,
+Classname => Öğeyi sınıf ismine göre bulmak için,
+Name => Öğeyi öğenin adına göre bulmak için,
+Link text => Öğeyi öğenin bağlantısının metnine göre bulmak için,
+XPath => Dinamik öğeyi bulmak için,
+CSS path => CSS yolu adı, sınıfı veya kimliği olmayan öğeleri de bulabilmek için.
+Selenium kullanılan otomasyonlarda elementlerin id, sınıf, isim gibi genel konum belirleyiciler ile bulunamadığı durumlarda xpath web sayfalarındaki elementleri bulmak için kullanılır.
+
+Xpath Nedir?
+Xpath kısaca xml yolu olarak tanımlanır. Web sayfalarındaki herhangi bir öğeyi bulmak için kullanılan syntax ya da dil diyebiliriz. HTML ve DOM yapısını kullanarak bir web sayfasındaki herhangi bir öğenin konumunu bulmak amacıyla kullanılır.
+Selenium’da elementleri bulmak ve seçmek için kullanılan yöntemler:
+Xpath Yöntemi : find_element_by_xpath()
+ID Yöntemi : find_element_by_id()
+Name Yöntemi : find_element_by_name() *Çoklu seçim için "elements" yapmak yeterlidir. 
+Link Text Yöntemi : find_element_by_link_text()
+TagName Yöntemi : find_element_by_tag_name()
+Class Name Yöntemi : find_element_by_class_name()
+CSS Selector Yöntemi : find_element_by_css_selector()
+Partial Link Text Yöntemi : find_element_by_partial_link_text()
+
+SELENIUM'DA AKSİYONLAR 
+Selenium,web sayfaları üzerinde farklı aksiyonları gerçekleştirmek için kullanılan bir test otomasyon aracıdır.Bu aksiyonlar, web sayfalarındaki öğeleri bulmak ve üzerlerinde etkileşimde bulunmak için kullanılır.
+1. send_keys() ==> Bir metin kutusuna yazı yazmak veya bir düğmeye klavyeden bir tuş göndermek için kullanılır.
+2. click() ==> Bir ögeye(düğme, bağlantı vb.) tıklamak için kullanılır.
+3. clear() ==> Bir metin kutusundaki mevcut metni silmek için kullanılır. Örneğin, bir metin kutusundaki mevcut metni silmek için aşağıdaki kod kullanılabilir:+
+4. submit() ==> Bir formu göndermek için kullanılır.Formdaki "submit" düğmesine tıklamadan veya Enter tuşuna basmadan önce kullanılabilir.
+5. select_by_visible_text() ==> Bir açılır kutudan seçenek seçmek için kullanılır.Seçenekleri açılır kutudan görülebilen metinleri kullanarak seçer.
+6. find_element_by ==> Web sitesindeki bir ögeyi bulmak için kullanılır.  
+7. get() ==> Bu aksiyon, URL'ye gitmek için kullanılır.
+8. maximize_window() ==> Tarayıcı penceresini tam ekran yapmak için kullanılır.         
+9. scroll () ==> Sayfayı aşağı yukarı kaydırmak için kullanılır.
+10. Back => Önceki sayfaya geçmek için kullanılır.
+11. Forward ==> Sonraki sayfaya geçmek için kullanılır.
+12. Refresh ==> Sayfayı yenilemek için kullanılır.
