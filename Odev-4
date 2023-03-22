@@ -1,0 +1,87 @@
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+from time import sleep 
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome(ChromeDriverManager().install())
+
+
+class TestSauce:
+    def test_null_login(self):
+        driver = webdriver.Chrome()
+        driver.maximize_window()
+        driver.get("https://www.saucedemo.com/")
+        sleep(2)
+        loginBtn = driver.find_element(By.ID, "login-button")
+        loginBtn.click()
+        sleep(2)
+        errormessage = driver.find_element(By.XPATH, "/html/body/div/div/div[2]/div[1]/div/div/form/div[3]/h3")
+        testResult = errormessage.text == "Epic sadface: Username is required"
+        print(f"Test Sonucunuz: {testResult}") 
+
+    def test_null_Pw(self):
+        driver.get("https://www.saucedemo.com/")
+        sleep(2)
+        usurname = driver.find_element(By.ID, "user-name")
+        usurname.send_keys("standart_user")
+        sleep(1)
+        loginBtn = driver.find_element(By.ID, "login-button")
+        sleep(1)
+        loginBtn.click()
+        sleep(1)
+        errorNoPw = driver.find_element(By.XPATH, "/html/body/div/div/div[2]/div[1]/div/div/form/div[3]/h3")
+        testResult = errorNoPw.text == "Epic sadface: Password is required"
+        print(f"Test Sonucunuz: {testResult}") 
+
+
+    def test_lockedOut(self):
+        driver.get("https://www.saucedemo.com/")
+        sleep(2)
+        usurname = driver.find_element(By.ID, "user-name")
+        usurname.send_keys("locked_out_user")
+        sleep(1)
+        password = driver.find_element(By.ID, "password")
+        password.send_keys("secret_sauce")
+        loginBtn = driver.find_element(By.ID, "login-button")
+        loginBtn.click()
+        sleep(1)
+        errorNoPw = driver.find_element(By.XPATH, "/html/body/div/div/div[2]/div[1]/div/div/form/div[3]/h3")
+        testResult = errorNoPw.text == "Epic sadface: Sorry, this user has been locked out."
+        print(f"Test Sonucunuz: {testResult}") 
+
+    def test_errorİcon(self):
+        driver.get("https://www.saucedemo.com/")
+        sleep(2)
+        loginBtn = driver.find_element(By.ID, "login-button")
+        loginBtn.click()
+        sleep(1)
+        xBtn = driver.find_element(By.XPATH, "/html/body/div[1]/div/div[2]/div[1]/div/div/form/div[3]/h3/button")
+        xBtn.click()
+        sleep(1)
+
+    def testloginAndProduct(self):
+        driver.get("https://www.saucedemo.com/")
+        sleep(2)
+        usurname = driver.find_element(By.ID, "user-name")
+        usurname.send_keys("standard_user")
+        sleep(1)
+        password = driver.find_element(By.ID, "password")
+        password.send_keys("secret_sauce")
+        sleep(1)
+        loginBtn = driver.find_element(By.ID, "login-button")
+        loginBtn.click()
+        sleep(10)
+        inventoryList = driver.find_elements(By.CLASS_NAME, "inventory_item")
+        print(f"There are {len(inventoryList)} items in list")
+
+testClass = TestSauce()
+# testClass.test_null_login()
+# testClass.test_null_Pw()
+# testClass.test_lockedOut()
+# testClass.test_errorİcon()
+# testClass.testloginAndProduct()
+##Hepsi test edildi##
+
+
+while True:
+    continue
